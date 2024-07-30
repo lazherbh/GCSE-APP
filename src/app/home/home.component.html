@@ -1,0 +1,16 @@
+<div class="offer-list">
+    <tr *ngFor="let e of listOffres">
+      <div class="offer">
+        <h2>{{ e.title }}</h2>
+        <p>{{ e.details }}</p>
+        <p>{{ e.periodeEnMois }}</p>
+        <p>{{ e.domaine }}</p>
+        <p>{{ e.mode }}</p>
+        <p>{{ e.utilisateur }}</p>
+
+
+        <a [routerLink]="['/off', e.id]">Voir plus</a>
+      </div>
+    
+  </div>
+  
