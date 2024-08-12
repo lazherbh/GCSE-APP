@@ -11,7 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
-import { PagesComponent } from './pages/pages.component'; 
+import { PagesComponent } from './pages/pages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PagesComponent } from './pages/pages.component';
     MatIconModule,
     MatSidenavModule,
     MatDividerModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
