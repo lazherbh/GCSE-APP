@@ -26,17 +26,13 @@ export class AppComponent {
     cursor: 'pointer',
   };
 
-
-  scrollToSection(sectionId: string) {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      });
-      this.open = false;
-    }
-  }
+  logout() {
+    
+}
+links   
+= [
+   { label: 'Docs', url: '/docs' },
+   { label: 'Community', url: '/community' },
+   { label: 'Blog', url: '/blog' }
+ ];
 }

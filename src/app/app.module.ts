@@ -10,13 +10,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
-import { HomeComponent } from './home/home.component'; 
+import { HomeComponent } from './home/home.component';
+import { PagesComponent } from './pages/pages.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PagesComponent
     
   ],
   imports: [

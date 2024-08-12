@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobsHere-deployment
+  labels:
+    app: jobsHere
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jobsHere
+  template:
+    metadata:
+      labels:
+        app: jobsHere
+    spec:
+      containers:
+      - name: jobsHere
+        image: lazherhassine/angular
+        ports:
+        - containerPort: 4200
+          name: jobsHere
+       
