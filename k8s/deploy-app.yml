@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: jobsHere
-        image: lazherhassine/angular
+        image: lazherhassine/pfe-app
         ports:
         - containerPort: 4200
           name: jobsHere
