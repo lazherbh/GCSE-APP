@@ -1,4 +1,4 @@
-name: Deploy Docker Image to Azure Web App - GCSE-APP
+name: Deploy Docker Image to Azure AKS - GCSE-APP
 
 on:
   push:
@@ -11,24 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_72740D4EAEAA4146A9C1D3D1A190F99D}}
-      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP}}
-      WEBAPP_NAME: ${{ secrets.WEBAPP_NAME}}
-      AZURE_SPN_CLIENT_ID: ${{ secrets.AZUREAPPSERVICE_CLIENTID_86656780EFC64741AC48FB3ECBA3A241}}
-      AZURE_SPN_CLIENT_SECRET: ${{ secrets.AZUREAPPSERVICE_CLIENTSECRET_FF452D9373A04A0FA807D5204C4A84F2}}
-      AZURE_TENANT_ID: ${{ secrets.AZUREAPPSERVICE_TENANTID_B75F33ED9ABE4DB18455CB21F83554AE}}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      AKS_CLUSTER_NAME: ${{ secrets.AKS_CLUSTER_NAME }}
+      DOCKER_IMAGE: lazherhassine/pfe-app:latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Azure CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y azure-cli
+
       - name: Login to Azure
-        run: |
-          az login --service-principal -u "$AZURE_SPN_CLIENT_ID" -p "$AZURE_SPN_CLIENT_SECRET" -t "$AZURE_TENANT_ID"
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Pull Docker image from Docker Hub
+      - name: Get AKS credentials
         run: |
-          docker pull lazherhassine/pfe-app:latest
+          az aks get-credentials --resource-group $AZURE_RESOURCE_GROUP --name $AKS_CLUSTER_NAME
 
-      - name: Deploy to Azure Web App
+      - name: Deploy Docker image to AKS
         run: |
-          az webapp config container set --name $WEBAPP_NAME --resource-group $AZURE_RESOURCE_GROUP \
-          --docker-custom-image-name lazherhassine/pfe-app:latest \
-          --subscription $AZURE_SUBSCRIPTION_ID
+          kubectl set image deployment/my-deployment my-container=$DOCKER_IMAGE
+          kubectl rollout status deployment/my-deployment
