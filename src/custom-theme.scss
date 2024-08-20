@@ -32,4 +32,84 @@ $GCSE-App-theme: mat.define-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($GCSE-App-theme);
+/* navbar.component.scss */
+
+.navbar {
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.navbar-nav li {
+  margin: 0 10px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.navbar-nav a {
+  text-decoration: none;
+  color: #f5f1f1;
+  
+  justify-content: flex-start;
+}
+.mat-toolbar {
+  background: #3f51b5; /* Couleur de fond personnalisée */
+  color: white; /* Couleur du texte */
+  padding: 16px;
+ 
+}
+
+.spacer {
+  display: flex;
+  flex-grow: 1;
+  
+  justify-content: flex-start;
+}
+.container {
+  text-align: center;
+}
+
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-card {
+  margin: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.features {
+  margin-top: 50px;
+  
+}
+
+
+/* ... autres styles pour personnaliser les éléments */
+
+
 

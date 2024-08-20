@@ -1,0 +1,100 @@
+<div class="container">
+    <h2>Gestion des Offres</h2>
+<div class="row" mt-3>
+    <div class="card">
+        <h2 class="card-header">Liste offre </h2>
+        <table class="table table-hover table-striped" border="1">
+            <tr>
+            <th>#</th>
+            <th>title</th>
+            <th>details</th>
+            <th>domaine</th>
+            <th>mode</th>
+            <th>periodeEnMois</th>
+           
+
+            
+            </tr>
+            
+            <tbody>
+                <tr *ngFor="let e of listOffres">
+                <td>{{ e.id }}</td>
+                <td>{{ e.title }} </td>
+                <td>{{ e.details }} </td>
+                <td>{{ e.domaine }}</td>
+                <td>{{ e.mode }} </td>
+                <td>{{ e.periodeEnMois }} Mois</td>
+                
+                <td>
+                    <button (click)="openEditForm(e)" class="btn btn-primary">Edit</button>
+                    <button (click)="deleteOffre(e)" class="btn btn-danger">Delete</button>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+            <div *ngIf="selectedOffre" class="card">
+                <h2 class="card-header">Edit offre </h2>
+                <div class="card-body">
+                  <form [formGroup]="formOffre" (ngSubmit)="submitEditForm()">
+                    <div  class="form-group">
+                      <label >title:</label>
+                      <input class="form-control" id="title" [(ngModel)]="selectedOffre.title" name="title" required >
+                    </div>
+                    <div [formGroup]="formOffre" class="form-group">
+                      <label >details:</label>
+                      <input id="details" [(ngModel)]="selectedOffre.details" name="details" required class="form-control">
+                    </div>
+                    <div  class="form-group">
+                        <label for="Domaine">domaine</label>
+
+<select formControlName="domaineId" class="form-control" name="domaine" id="domaine">
+<option *ngFor="let d of listDomaines" value="{{ 1 }}"> {{ d?.nom }}</option>
+</select>    </div>
+                      <div class="form-group">
+                        <label >mode:</label>
+                        <input id="mode" [(ngModel)]="selectedOffre.mode" name="mode" required class="form-control">
+                      </div>
+                      <div  class="form-group">
+                        <label >periodeEnMois:</label>
+                        <input class="form-control" id="periodeEnMois" [(ngModel)]="selectedOffre.periodeEnMois" name="periodeEnMois" required >
+                      </div>
+                      
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" (click)="closeEditForm()" class="btn btn-secondary">Cancel</button>
+                  </form>
+                </div>
+              </div>
+              
+            
+    </div>
+    <div class="card">
+        <h2 class="card-header">Ajouter offre </h2>
+        <form [formGroup]="formOffre"  (ngSubmit)="submit()">
+            <div [formGroup]="formOffre" class="form-group">
+            <label for="nom">title</label>
+            <input formControlName="title"  class="form-control" type="text">
+            </div>
+            <div class="form-group">
+            <label for="Prenom">details</label>
+            <input formControlName="details" class="form-control" type="text">
+            </div>
+          
+                <div class="form-group">
+                <label for="Prenom">mode</label>
+                <input formControlName="mode" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="nom">periodeEnMois</label>
+                    <input formControlName="periodeEnMois"  class="form-control" type="text">
+                    </div>
+                  
+           
+            
+            <div class="form-group">
+            <button type="submit" class="btn btn-outline-success mt-2">Envoyer</button>
+            </div>
+            </form>
+            
+    </div>
+</div>
+</div>

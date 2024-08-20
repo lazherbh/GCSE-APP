@@ -1,0 +1,57 @@
+/* Copy the provided CSS here */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .job-listings {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .job-listings h2 {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .job-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .job-card h3 {
+    color: #f57c00;
+  }
+  
+  .job-card p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  
+  .job-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .job-details span {
+    margin-right: 10px;
+  }
+  
+  .job-details button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .job-details button:hover {
+    background-color: #0056b3;
+  }
+  

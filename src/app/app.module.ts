@@ -13,13 +13,32 @@ import { MatDividerModule } from '@angular/material/divider';
 import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages/pages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
+import   
+ { GestionCompetanceComponent } from './pages/gestion-competance/gestion-competance.component';
+import { GestionOffreComponent } from './pages/gestion-offre/gestion-offre.component';
+import { GestionDomaineComponent } from './pages/gestion-domaine/gestion-domaine.component';
+import { OffreComponent } from './pages/offre/offre.component';
+import { JobDetailComponent } from './pages/job-detail/job-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PagesComponent
+    PagesComponent,
+    LoginComponent,
+    RegisterComponent,
+    GestionCompetanceComponent,
+    GestionOffreComponent,
+    GestionDomaineComponent,
+    OffreComponent,
+    JobDetailComponent
     
   ],
   imports: [
@@ -32,7 +51,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSidenavModule,
     MatDividerModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

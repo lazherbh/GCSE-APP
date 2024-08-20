@@ -1,0 +1,22 @@
+<div *ngIf="job" class="job-details">
+    <h2>{{ job.title }}</h2>
+    <h4>{{ job.details }} - {{ job.location }}</h4>
+    <p>{{ job.date }}</p>
+    <button (click)="postuler()">Postuler maintenant</button>
+    <div class="stats">
+      <span>{{ job.candidates }} candidats pour {{ job.positions }} poste ouvert</span>
+    </div>
+  
+    <div class="info">
+      <div><strong>Postes vacants:</strong>2</div>
+      <div><strong>Type d'emploi désiré:</strong> Cdi</div>
+      <div><strong>Niveau d'étude:</strong> Bac+5</div>
+      <div><strong>Langue:</strong> Englais</div>
+      <div><strong>Experience:</strong> 2 ans</div>
+      <div><strong>Genre:</strong> {{ job.gender }}</div>
+    </div>
+  
+    <h3>Description de l'emploi</h3>
+    <p>{{ job.description }}</p>
+  </div>
+  

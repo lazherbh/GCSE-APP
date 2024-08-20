@@ -5,7 +5,7 @@ import { ThemePalette } from '@angular/material/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['../custom-theme.scss']
 })
 export class AppComponent {
 
@@ -31,8 +31,9 @@ export class AppComponent {
 }
 links   
 = [
-   { label: 'Docs', url: '/docs' },
-   { label: 'Community', url: '/community' },
-   { label: 'Blog', url: '/blog' }
+   { label: 'Home', url: '/' },
+   { label: 'Offres', url: '/offre' },
+   { label: 'Login', url: '/login' }
+
  ];
 }

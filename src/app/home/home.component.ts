@@ -20,5 +20,8 @@ export class HomeComponent implements OnInit {
       this.listOffres.push(...data);},
       err=>console.log(err));
     }
-
+    features = [
+      { title: 'Feature 1', description: 'Description for feature 1' },
+      { title: 'Feature 2', description: 'Description for feature 2' }
+    ];
 }

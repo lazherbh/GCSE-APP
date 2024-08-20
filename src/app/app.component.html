@@ -1,10 +1,11 @@
 <mat-toolbar color="primary">
-  <span>Mon Application</span>
+  <a style="text-decoration: none;color: white;" href=""><span>JobsHere</span></a>
   <span class="spacer"></span>
-  <ul>
-    <li *ngFor="let link of links">
+  <ul class="navbar-nav">
+    <li *ngFor="let link of links; let i = index">
       <a [routerLink]="link.url">{{ link.label }}</a>
     </li>
   </ul>
-  <mat-icon>search</mat-icon>
+  <!-- <mat-icon>search</mat-icon> -->
 </mat-toolbar>
+<router-outlet></router-outlet>

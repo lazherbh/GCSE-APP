@@ -1,0 +1,37 @@
+.row{
+    display: flex;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .card {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+  
+  .card-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  form {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    margin-right: 10px;
+  }
+ 

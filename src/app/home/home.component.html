@@ -1,16 +1,31 @@
-<div class="offer-list">
-    <tr *ngFor="let e of listOffres">
-      <div class="offer">
-        <h2>{{ e.title }}</h2>
-        <p>{{ e.details }}</p>
-        <p>{{ e.periodeEnMois }}</p>
-        <p>{{ e.domaine }}</p>
-        <p>{{ e.mode }}</p>
-        <p>{{ e.utilisateur }}</p>
-
-
-        <a [routerLink]="['/off', e.id]">Voir plus</a>
-      </div>
-    
+<div class="container">
+  <div class="title-site">
+    <h1>Mon Site d'Emploi</h1>
   </div>
-  
+  <div class="hero">
+    <img class="home-image" src="../../assets/jobs.png" alt="Personnes travaillant en équipe">
+    <h1 class="title">Trouvez votre prochain défi !</h1>
+    <p class="description">
+      Recherchez des milliers d'offres d'emploi et de stage. 
+      Rejoignez notre communauté de professionnels.
+    </p>
+    <button mat-raised-button color="accent">Commencez votre recherche</button>
+  </div>
+
+  <div class="features">
+    <h2>Pourquoi nous choisir ?</h2>
+    <mat-card *ngFor="let feature of features; let i = index" class="feature-card">
+      <mat-card-header>
+        <mat-card-title>{{ feature.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        {{ feature.description }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="testimonials">
+    <h2>Témoignages</h2>
+    </div>
+</div>
+

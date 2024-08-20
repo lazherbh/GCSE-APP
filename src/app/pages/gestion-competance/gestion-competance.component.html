@@ -1,0 +1,68 @@
+<div class="container">
+    <h2>Gestion des competances</h2>
+<div class="row" mt-3>
+    <div class="card">
+      <h2 class="card-header">Liste competance </h2>
+        <table class="table table-hover table-striped" border="1">
+            <tr>
+            <th>#</th>
+            <th>nomCompetence</th>
+            <th>niveauRequis</th>
+            
+            </tr>
+            
+            <tbody>
+                <tr *ngFor="let e of listCompetances">
+                <td>{{ e.id }}</td>
+                <td>{{ e.nomCompetence }} </td>
+                <td>{{ e.niveauRequis }} </td>
+                
+                <td>
+                    <button (click)="openEditForm(e)" class="btn btn-primary">Edit</button>
+                    <button (click)="deleteCompetance(e)" class="btn btn-danger">Delete</button>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+            <div *ngIf="selectedCompetance" class="card">
+                <h2 class="card-header">Edit competance</h2>
+                <div class="card-body">
+                  <form [formGroup]="formCompetance" (ngSubmit)="submitEditForm()">
+                    <div  class="form-group">
+                      <label >nomCompetence:</label>
+                      <input class="form-control" id="nomCompetence" [(ngModel)]="selectedCompetance.nomCompetence" name="nomCompetence" required >
+                    </div>
+                    <div class="form-group">
+                      <label >niveauRequis:</label>
+                      <input id="niveauRequis" [(ngModel)]="selectedCompetance.niveauRequis" name="niveauRequis" required class="form-control">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" (click)="closeEditForm()" class="btn btn-secondary">Cancel</button>
+                  </form>
+                </div>
+              </div>
+              
+            
+    </div>
+    <div class="card">
+      <h2 class="card-header">Ajouter competance </h2>
+        <form [formGroup]="formCompetance"  (ngSubmit)="submit()">
+            <div class="form-group">
+            <label for="nom">nomCompetence</label>
+            <input formControlName="nomCompetence"  class="form-control" type="text">
+            </div>
+            <div class="form-group">
+            <label for="Prenom">niveauRequis</label>
+            <input formControlName="niveauRequis" class="form-control" type="text">
+            </div>
+           
+            
+            <div class="form-group">
+            <button type="submit" class="btn btn-outline-success mt-2">Envoyer</button>
+            </div>
+            </form>
+            
+    </div>
+</div>
+</div>

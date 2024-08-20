@@ -1,26 +1,33 @@
-/* styles.css */
-.offer-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 105px;
-    margin-bottom: 15px;
-    width: 300px;
-  }
-  
-  .offer {
-    border: 10px solid #ccc;
-    padding: 15px;
-    margin-bottom: 15px;
-    width: 300px;
-  }
-  
-  .offer h2 {
-    margin-top: 10;
-    margin-bottom: 10px;
-  }
-  
-  .offer p {
-    margin-bottom: 0;
-  }
-  
+.container {
+  position: relative;
+}
+
+.hero { 
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.features {
+  margin-top: 50px;
+}
+
+.home-image {
+  width: 90vw;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.title-site {
+  position: absolute;
+  top: 20px;
+  left: 5vw;
+  color: white;
+}
+/* ... autres styles pour personnaliser les éléments */
