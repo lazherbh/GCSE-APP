@@ -11,4 +11,4 @@ FROM nginx:1.17.1-alpine
 
 COPY --from=angular-jobs /usr/src/app/dist/ /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 4200
