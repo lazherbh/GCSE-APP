@@ -5,6 +5,8 @@
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .navbar-logo {
@@ -15,13 +17,48 @@
 .navbar-nav {
   list-style: none;
   display: flex;
+  justify-content: flex-start;
+
 }
 
 .navbar-nav li {
   margin: 0 10px;
+  display: flex;
+  justify-content: flex-start;
+
 }
 
 .navbar-nav a {
   text-decoration: none;
-  color: #333;
+  color: #f5f1f1;
+  
+  justify-content: flex-start;
+}
+.mat-toolbar {
+  background: #3f51b5; /* Couleur de fond personnalisée */
+  color: white; /* Couleur du texte */
+  padding: 16px;
+ 
+}
+
+.spacer {
+  display: flex;
+  flex-grow: 1;
+  
+  justify-content: flex-start;
+}
+.container {
+  text-align: center;
+}
+
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
